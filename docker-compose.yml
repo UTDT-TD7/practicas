@@ -3,6 +3,7 @@ version: "3"
 services:
   kafka:
     image: docker.io/bitnami/kafka:3.5
+    user: root
     ports:
       - 9092:9092
       - 9093:9093
