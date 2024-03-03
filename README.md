@@ -2,6 +2,12 @@
 
 ¡Hola! En este repositorio vas a encontrar el código que usamos para alguna de las prácticas de la materia TD7 - Ingeniería de Datos.
 
+## Guía de prácticas
+
+| Práctica                               | Carpeta    | Detalle                                                                                                                 |
+|----------------------------------------|------------|-------------------------------------------------------------------------------------------------------------------------|
+| (1) Despliegue de servidor dockerizado | practica_1 | Incluye un docker compose para levantar un postgres, crear las tablas de datos del simulador y cargar datos desde CSVs. |
+
 ## Simulador
 
 A continuación enumeramos los pasos para levantar el simulador de eventos, que generará los datos:
