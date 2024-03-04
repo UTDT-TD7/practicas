@@ -1,4 +1,4 @@
-version: '3.9'
+version: '3.3'
 
 services:
   postgres:
@@ -7,6 +7,7 @@ services:
       - 5432:5432
     volumes:
       - postgres_volume:/var/lib/postgresql/data
+      - ./csv/:/data/
     environment:
       - POSTGRES_PASSWORD=S3cret
       - POSTGRES_USER=catedra
