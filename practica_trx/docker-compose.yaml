@@ -1,0 +1,39 @@
+name: "utdt-concurrencia"
+services:
+  mysql:
+    image: mysql:8.0-debian
+    environment:
+      - MYSQL_USER=utdt
+      - MYSQL_PASSWORD=utdt
+      - MYSQL_DATABASE=utdt
+      - MYSQL_ROOT_PASSWORD=utdt
+    ports:
+      - 13306:3306
+    volumes:
+      - mysql_volume:/var/lib/mysql
+
+  postgres:
+    image: postgres
+    ports:
+      - 15432:5432
+    volumes:
+      - postgres_volume:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=utdt
+      - POSTGRES_USER=utdt
+      - POSTGRES_DB=utdt
+
+  jupyterlab:
+    build: .
+    volumes:
+      - ./notebooks:/notebooks
+    ports:
+      - 18888:8888
+    environment:
+      - JUPYTER_TOKEN=utdt
+
+volumes:
+  postgres_volume:
+    external: false
+  mysql_volume:
+    external: false
