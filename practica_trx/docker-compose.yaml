@@ -32,6 +32,16 @@ services:
     environment:
       - JUPYTER_TOKEN=utdt
 
+  slides:
+    build: .
+    volumes:
+      - ./notebooks:/notebooks
+    ports:
+      - 18000:8888
+    environment:
+      - JUPYTER_TOKEN=utdt
+    command: nbconvert Práctica.ipynb --to slides --post serve --ServePostProcessor.port=8888 --ServePostProcessor.ip='0.0.0.0' --ServePostProcessor.open_in_browser=False
+
 volumes:
   postgres_volume:
     external: false
