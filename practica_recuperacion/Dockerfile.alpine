@@ -1,0 +1,4 @@
+FROM alpine:3.14
+RUN apk add --no-cache curl
+WORKDIR /
+CMD curl -X POST --location "http://debezium:8083/connectors" -H "Content-Type: application/json" -H "Accept: application/json" -d @connector.json

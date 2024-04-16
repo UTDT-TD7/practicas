@@ -15,6 +15,7 @@ services:
       start_period: 10s
       retries: 20
       interval: 10s
+
   broker:
     image: confluentinc/cp-kafka:7.3.1
     hostname: broker
@@ -44,6 +45,20 @@ services:
       interval: 5s
       timeout: 10s
       retries: 10
+
+  kafka-ui:
+    image: provectuslabs/kafka-ui
+    ports:
+      - 9090:8080
+    depends_on:
+      - broker
+      - schema-registry
+    environment:
+      KAFKA_CLUSTERS_0_NAME: local
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: broker:29092
+      KAFKA_CLUSTERS_0_SCHEMAREGISTRY: http://schema-registry:8085
+      DYNAMIC_CONFIG_ENABLED: "true"
+
   debezium:
     image: debezium/connect:latest
     restart: always
@@ -94,7 +109,6 @@ services:
       SCHEMA_REGISTRY_HOST_NAME: schema-registry
       SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: broker:29092
       SCHEMA_REGISTRY_LISTENERS: http://0.0.0.0:8081
-
     healthcheck:
       start_period: 10s
       interval: 10s
@@ -124,7 +138,7 @@ services:
       debezium:
         condition: service_healthy
     ports:
-      - "8080:8080"
+      - "18080:8080"
     environment:
       KAFKA_CONNECT_URIS: http://debezium:8083
 
@@ -138,7 +152,7 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: utdt
+      POSTGRES_DB: movies_db
     command: ["postgres", "-c", "wal_level=logical"]
     healthcheck:
       test: ["CMD", "psql", "-U", "postgres", "-c", "SELECT 1"]
@@ -147,3 +161,24 @@ services:
       retries: 5
     volumes:
       - ./scripts:/docker-entrypoint-initdb.d
+
+  jupyterlab:
+    build: .
+    volumes:
+      - ./notebooks:/notebooks
+    ports:
+      - 18888:8888
+    environment:
+      - JUPYTER_TOKEN=utdt
+
+  load_connector:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.alpine
+    volumes:
+      - ./connector.json:/connector.json
+    depends_on:
+      debezium:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
