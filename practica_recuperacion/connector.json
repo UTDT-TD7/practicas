@@ -1,5 +1,5 @@
 {
-  "name": "movies-db-connector",
+  "name": "ejemplo-db-connector",
   "config": {
     "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
     "plugin.name": "pgoutput",
@@ -8,11 +8,11 @@
     "database.port": "5432",
     "database.user": "postgres",
     "database.password": "postgres",
-    "database.dbname": "movies_db",
+    "database.dbname": "ejemplo_db",
     "database.server.name": "postgres",
-    "table.include.list": "public.movies",
+    "table.include.list": "public.ejemplo",
     "database.history.kafka.bootstrap.servers": "kafka:9092",
-    "database.history.kafka.topic": "schema-changes.movies",
+    "database.history.kafka.topic": "schema-changes.ejemplo",
     "topic.prefix": "postgres",
     "topic.creation.enable": "true",
     "topic.creation.default.replication.factor": "1",

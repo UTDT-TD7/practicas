@@ -152,7 +152,7 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: movies_db
+      POSTGRES_DB: ejemplo_db
     command: ["postgres", "-c", "wal_level=logical"]
     healthcheck:
       test: ["CMD", "psql", "-U", "postgres", "-c", "SELECT 1"]
