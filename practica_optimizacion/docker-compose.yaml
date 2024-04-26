@@ -1,0 +1,28 @@
+name: "utdt-optimizacion"
+services:
+  postgres:
+    image: postgres:latest
+    restart: always
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_volume:/var/lib/postgresql/data
+      - ./data:/docker-entrypoint-initdb.d
+    environment:
+      - POSTGRES_PASSWORD=utdt
+      - POSTGRES_USER=utdt
+      - POSTGRES_DB=utdt
+    healthcheck:
+      test: ["CMD", "psql", "-U", "postgres", "-c", "SELECT 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: "100M"
+
+volumes:
+  postgres_volume:
+    external: false
