@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "dq"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+great-expectations = "^0.18.13"
+sqlalchemy = "^2.0.30"
+psycopg2 = "^2.9.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

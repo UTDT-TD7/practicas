@@ -1,0 +1,23 @@
+version: '3.3'
+
+services:
+  postgres:
+    image: postgres:13
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_volume:/var/lib/postgresql/data
+      - ./data/:/data/
+    environment:
+      - POSTGRES_PASSWORD=S3cret
+      - POSTGRES_USER=catedra
+  great_expectations:
+    build: .
+    volumes:
+      - ./gq:/gq/gq
+      - ./gx:/gq/gx
+      - ./data_docs/:/data_docs
+      - ./data:/data
+volumes:
+    postgres_volume:
+        external: false

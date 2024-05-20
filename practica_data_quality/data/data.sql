@@ -1,0 +1,5 @@
+COPY turnstiles 
+FROM '/data/2021-01.csv'
+DELIMITER ','
+CSV HEADER
+ENCODING 'LATIN1';
