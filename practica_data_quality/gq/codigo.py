@@ -55,7 +55,8 @@ context.build_data_docs()
 context.add_or_update_checkpoint(checkpoint=checkpoint)
 validator.save_expectation_suite()
 
-
+# Observación: cuando ya se tiene un checkpoint pre-configurado, se puede usar:
+# retrieved_checkpoint = context.get_checkpoint(name="my_checkpoint")
 checkpoint_result = checkpoint.run()
 
 context.open_data_docs()
