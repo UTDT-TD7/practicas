@@ -3,7 +3,7 @@ from great_expectations.checkpoint import Checkpoint
 
 PG_CONNECTION_STRING = "postgresql+psycopg2://catedra:S3cret@postgres/catedra"
 
-context = gx.get_context(project_root_dir="/gq/gx")
+context = gx.get_context(project_root_dir="/gq")
 
 
 try:
@@ -51,7 +51,7 @@ checkpoint = Checkpoint(
     ],
 )
 
-
+context.build_data_docs()
 context.add_or_update_checkpoint(checkpoint=checkpoint)
 validator.save_expectation_suite()
 
