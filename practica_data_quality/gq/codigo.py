@@ -13,11 +13,9 @@ try:
 except gx.exceptions.exceptions.DataContextError:
     print("Datasource already exists, instantiating..")
     pg_datasource = context.datasources["pg_datasource"]
-    
+
 try:
-    pg_datasource.add_table_asset(
-        name="turnstiles", table_name="turnstiles"
-    )
+    pg_datasource.add_table_asset(name="turnstiles", table_name="turnstiles")
 except ValueError:
     # Already exists
     pass
@@ -53,7 +51,7 @@ checkpoint = Checkpoint(
 
 context.build_data_docs()
 context.add_or_update_checkpoint(checkpoint=checkpoint)
-validator.save_expectation_suite()
+validator.save_expectation_suite(discard_failed_expectations=False)
 
 # Observación: cuando ya se tiene un checkpoint pre-configurado, se puede usar:
 # retrieved_checkpoint = context.get_checkpoint(name="my_checkpoint")
