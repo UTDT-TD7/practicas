@@ -1,0 +1,58 @@
+##Al conectar ahora el host no es "localhost", es el nombre del servicio (postgres)
+
+version: "3"
+
+services:
+  dbt:
+    build:
+      context: ./container_python_dbt
+    stdin_open: true # docker run -i
+    networks:
+      database: {}
+    ports:
+        - "8080:8080"
+    
+  postgres_e:
+    image: postgres
+    ports:
+      - 5432:5432
+    restart: always
+    volumes:
+      - ./container_db_e/scripts:/docker-entrypoint-initdb.d
+      - ./container_db_e/:/container_db_e/
+    environment:
+      - POSTGRES_PASSWORD=systems
+      - POSTGRES_USER=codestack
+      - POSTGRES_DB=postgres
+    networks:
+      database: {}
+
+  postgres_l:
+    image: postgres
+    ports:
+      - 5433:5432
+    restart: always
+    volumes:
+      - ./container_db_l/scripts:/docker-entrypoint-initdb.d
+      - ./container_db_l/:/container_db_l/
+    environment:
+      - POSTGRES_PASSWORD=systems
+      - POSTGRES_USER=codestack
+      - POSTGRES_DB=postgres
+    networks:
+      database: {}
+
+  jobs:
+    build:
+      context: ./container_python_etl
+    stdin_open: true # docker run -i
+    networks:
+      database: {}
+
+
+
+networks:
+  database:
+    external: true
+    
+  

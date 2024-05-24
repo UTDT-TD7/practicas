@@ -1,0 +1,1 @@
+* * * * * /usr/local/bin/python3 /usr/src/app/e_l.py >> /usr/src/app/log_file.txt
