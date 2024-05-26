@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: listen
+    database: postgres
+    schema: public
+    tables:
+      - name: listen_events
