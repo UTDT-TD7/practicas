@@ -4,9 +4,12 @@ version: "3"
 
 services:
   dbt:
+    container_name: dbt
     build:
       context: ./container_python_dbt
     stdin_open: true # docker run -i
+    volumes:
+      - ./container_python_dbt/:/usr/src/app/
     ports:
         - "8080:8080"
     

@@ -1,0 +1,12 @@
+clase_utdt:
+  outputs:
+    dev:
+      dbname: postgres
+      host: postgres_l
+      pass: S3cret
+      port: 5432
+      schema: public
+      threads: 1
+      type: postgres
+      user: catedra
+  target: dev

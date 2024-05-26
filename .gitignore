@@ -1,1 +1,4 @@
 **.csv
+**.log
+
+!auth_events.csv
