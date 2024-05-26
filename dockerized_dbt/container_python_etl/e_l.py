@@ -8,7 +8,7 @@ import random
 #env_variables
 host_1='postgres_e';host_2='postgres_l';port='5432';database='postgres'
 #NUNCA hagan esto (hardcodear claves)
-user='codestack';password='systems'
+user='catedra';password='S3cret'
 
 #Extract query
 limit_1=int(random.random()*100)

@@ -7,8 +7,6 @@ services:
     build:
       context: ./container_python_dbt
     stdin_open: true # docker run -i
-    networks:
-      database: {}
     ports:
         - "8080:8080"
     
@@ -21,11 +19,10 @@ services:
       - ./container_db_e/scripts:/docker-entrypoint-initdb.d
       - ./container_db_e/:/container_db_e/
     environment:
-      - POSTGRES_PASSWORD=systems
-      - POSTGRES_USER=codestack
+      - POSTGRES_PASSWORD=S3cret
+      - POSTGRES_USER=catedra
       - POSTGRES_DB=postgres
-    networks:
-      database: {}
+
 
   postgres_l:
     image: postgres
@@ -36,23 +33,16 @@ services:
       - ./container_db_l/scripts:/docker-entrypoint-initdb.d
       - ./container_db_l/:/container_db_l/
     environment:
-      - POSTGRES_PASSWORD=systems
-      - POSTGRES_USER=codestack
+      - POSTGRES_PASSWORD=S3cret
+      - POSTGRES_USER=catedra
       - POSTGRES_DB=postgres
-    networks:
-      database: {}
+
 
   jobs:
     build:
       context: ./container_python_etl
     stdin_open: true # docker run -i
-    networks:
-      database: {}
 
 
-
-networks:
-  database:
-    external: true
     
   
