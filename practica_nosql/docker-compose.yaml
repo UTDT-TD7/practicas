@@ -1,0 +1,37 @@
+services:
+  pgvector:
+    container_name: pgvector
+    image: pgvector/pgvector:pg16
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=utdt
+      - POSTGRES_USER=utdt
+      - POSTGRES_DB=utdt
+    ports:
+      - 5432:5432
+
+  redis:
+    container_name: redis
+    image: redis:latest
+    restart: always
+    ports:
+      - 6379:6379
+    command: redis-server
+
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongo_data/:/app/data
+
+  neo4j:
+    container_name: neo4j
+    image: neo4j:latest
+    restart: always
+    ports:
+      - 7474:7474
+      - 7687:7687
+    environment:
+      - NEO4J_AUTH=none
