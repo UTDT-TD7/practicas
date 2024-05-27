@@ -1,0 +1,13 @@
+FROM python:3.11-slim
+RUN pip install -U pip
+RUN pip install -U \
+	psycopg2-binary==2.9.9 \
+	redis==5.0.4 \
+	pymongo==4.7.2 \
+	pandas==2.2.1 \
+	jupyterlab==4.1.5 \
+	vecs==0.4.3
+WORKDIR /notebooks
+EXPOSE 8888
+ENTRYPOINT ["jupyter"]
+CMD ["lab", "--ip", "0.0.0.0", "--port", "8888", "--no-browser", "--allow-root"]
