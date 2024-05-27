@@ -18,7 +18,8 @@ create table if not exists listen_events(
     firstname varchar(50),
     gender char,
     registration bigint,
-    duration numeric
+    duration numeric,
+    fecha timestamp
 );
 
 
@@ -31,6 +32,7 @@ create table if not exists etl_dump(
     ts bigint,
     trackId varchar(18),
     zip varchar(9),
+    fecha timestamp,
     len varchar (50),
     ban varchar (50),
     muestreo varchar (50)   

@@ -3,7 +3,9 @@
 import pandas as pd
 import psycopg2
 import random
+from datetime import datetime
 
+print('triggerea el crontab')
 
 #env_variables
 host_1='postgres_e';host_2='postgres_l';port='5432';database='postgres'
@@ -23,12 +25,13 @@ extract_query="SELECT * FROM listen_events OFFSET "+str(limit_1)+" ROWS FETCH NE
 
 #Insert query
 names=str(column_names_e).replace('[','').replace(']','').replace("'","")
-symbol=str(['%s,']*20).replace('[','').replace(']','').replace("'","").replace(",,",",")
+names=names+',fecha'
+symbol=str(['%s,']*21).replace('[','').replace(']','').replace("'","").replace(",,",",")
 symbol=symbol[0:len(symbol)-1]
 insert_query="INSERT INTO listen_events (" +names+") VALUES " +"("+symbol+")"
 
 #Para el etl
-insert_query_etl="INSERT INTO etl_dump (sessionid, iteminsession, userid, ts, trackid, zip,len,ban,muestreo ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+insert_query_etl="INSERT INTO etl_dump (sessionid, iteminsession, userid, ts, trackid, zip, fecha, len,ban,muestreo ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
 
 # In[] Functions
 
@@ -131,7 +134,7 @@ def transf(df):
     
     #Devolvemos solo lo que nos interesa
     df=df[['sessionid','iteminsession','userid','ts','trackid',
-                    'zip','len','ban','muestreo']]
+                    'zip','fecha','len','ban','muestreo']]
     
     return df
 
@@ -141,6 +144,7 @@ def transf(df):
 def main():
     #Perform the extraction
     df=SQL_query(host_1,database,user,password,port,extract_query,column_names_e)
+    df['fecha']=str(datetime.now())
     
     #Perform the first batch_insert
     transcripcion_completa(host_2,database,user,password,port,insert_query,df)
