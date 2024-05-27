@@ -1,0 +1,175 @@
+[2024-05-25T21:13:46.554+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-25T21:13:46.594+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: DAG_catedra_airflow.first-step-el scheduled__2024-05-25T00:20:00+00:00 [queued]>
+[2024-05-25T21:13:46.608+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: DAG_catedra_airflow.first-step-el scheduled__2024-05-25T00:20:00+00:00 [queued]>
+[2024-05-25T21:13:46.609+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-25T21:13:46.628+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): first-step-el> on 2024-05-25 00:20:00+00:00
+[2024-05-25T21:13:46.636+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=257) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-25T21:13:46.639+0000] {standard_task_runner.py:63} INFO - Started process 259 to run task
+[2024-05-25T21:13:46.639+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'DAG_catedra_***', 'first-step-el', 'scheduled__2024-05-25T00:20:00+00:00', '--job-id', '52', '--raw', '--subdir', 'DAGS_FOLDER/dag_clase.py', '--cfg-path', '/tmp/tmpyldfftc5']
+[2024-05-25T21:13:46.641+0000] {standard_task_runner.py:91} INFO - Job 52: Subtask first-step-el
+[2024-05-25T21:13:46.702+0000] {task_command.py:426} INFO - Running <TaskInstance: DAG_catedra_airflow.first-step-el scheduled__2024-05-25T00:20:00+00:00 [running]> on host b2cfee8f0b2b
+[2024-05-25T21:13:46.847+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='DAG_catedra_***' AIRFLOW_CTX_TASK_ID='first-step-el' AIRFLOW_CTX_EXECUTION_DATE='2024-05-25T00:20:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-25T00:20:00+00:00'
+[2024-05-25T21:13:46.850+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-25T21:13:46.861+0000] {logging_mixin.py:188} INFO - Connection to database was succesful
+[2024-05-25T21:13:46.882+0000] {logging_mixin.py:188} INFO - Query completed
+[2024-05-25T21:13:46.888+0000] {logging_mixin.py:188} INFO - execute_query_result_set()
+[2024-05-25T21:13:46.898+0000] {logging_mixin.py:188} INFO - Connection to database was succesful
+[2024-05-25T21:13:46.906+0000] {logging_mixin.py:188} INFO - Inserts performed wihout fail
+[2024-05-25T21:13:46.907+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-05-25T21:13:46.908+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-25T21:13:46.919+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=DAG_catedra_***, task_id=first-step-el, run_id=scheduled__2024-05-25T00:20:00+00:00, execution_date=20240525T002000, start_date=20240525T211346, end_date=20240525T211346
+[2024-05-25T21:13:46.975+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-25T21:13:47.007+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-05-25T21:13:47.011+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-26T00:42:59.185+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-26T00:42:59.205+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: DAG_catedra_airflow.first-step-el scheduled__2024-05-25T00:20:00+00:00 [queued]>
+[2024-05-26T00:42:59.212+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: DAG_catedra_airflow.first-step-el scheduled__2024-05-25T00:20:00+00:00 [queued]>
+[2024-05-26T00:42:59.212+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-26T00:42:59.224+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): first-step-el> on 2024-05-25 00:20:00+00:00
+[2024-05-26T00:42:59.230+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=66) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-26T00:42:59.231+0000] {standard_task_runner.py:63} INFO - Started process 68 to run task
+[2024-05-26T00:42:59.232+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'DAG_catedra_***', 'first-step-el', 'scheduled__2024-05-25T00:20:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/dag_clase.py', '--cfg-path', '/tmp/tmpidnjwhxs']
+[2024-05-26T00:42:59.233+0000] {standard_task_runner.py:91} INFO - Job 5: Subtask first-step-el
+[2024-05-26T00:42:59.271+0000] {task_command.py:426} INFO - Running <TaskInstance: DAG_catedra_airflow.first-step-el scheduled__2024-05-25T00:20:00+00:00 [running]> on host bb8f67d70e6d
+[2024-05-26T00:42:59.348+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='DAG_catedra_***' AIRFLOW_CTX_TASK_ID='first-step-el' AIRFLOW_CTX_EXECUTION_DATE='2024-05-25T00:20:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-25T00:20:00+00:00'
+[2024-05-26T00:42:59.350+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-26T00:42:59.356+0000] {logging_mixin.py:188} INFO - Connection to database was succesful
+[2024-05-26T00:42:59.367+0000] {logging_mixin.py:188} INFO - Query completed
+[2024-05-26T00:42:59.371+0000] {logging_mixin.py:188} INFO - execute_query_result_set()
+[2024-05-26T00:42:59.376+0000] {logging_mixin.py:188} INFO - Connection to database was succesful
+[2024-05-26T00:42:59.377+0000] {logging_mixin.py:188} INFO - ERROR, INSERTS COULDN`T BE DONE
+[2024-05-26T00:42:59.378+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-05-26T00:42:59.378+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-26T00:42:59.386+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=DAG_catedra_***, task_id=first-step-el, run_id=scheduled__2024-05-25T00:20:00+00:00, execution_date=20240525T002000, start_date=20240526T004259, end_date=20240526T004259
+[2024-05-26T00:42:59.445+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-26T00:42:59.473+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-05-26T00:42:59.479+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-26T01:06:05.612+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-26T01:06:05.634+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: DAG_catedra_airflow.first-step-el scheduled__2024-05-25T00:20:00+00:00 [queued]>
+[2024-05-26T01:06:05.642+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: DAG_catedra_airflow.first-step-el scheduled__2024-05-25T00:20:00+00:00 [queued]>
+[2024-05-26T01:06:05.642+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-26T01:06:05.654+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): first-step-el> on 2024-05-25 00:20:00+00:00
+[2024-05-26T01:06:05.659+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=522) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-26T01:06:05.661+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'DAG_catedra_***', 'first-step-el', 'scheduled__2024-05-25T00:20:00+00:00', '--job-id', '58', '--raw', '--subdir', 'DAGS_FOLDER/dag_clase.py', '--cfg-path', '/tmp/tmpx2nwcbkf']
+[2024-05-26T01:06:05.665+0000] {standard_task_runner.py:91} INFO - Job 58: Subtask first-step-el
+[2024-05-26T01:06:05.665+0000] {standard_task_runner.py:63} INFO - Started process 524 to run task
+[2024-05-26T01:06:05.710+0000] {task_command.py:426} INFO - Running <TaskInstance: DAG_catedra_airflow.first-step-el scheduled__2024-05-25T00:20:00+00:00 [running]> on host bb8f67d70e6d
+[2024-05-26T01:06:05.788+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='DAG_catedra_***' AIRFLOW_CTX_TASK_ID='first-step-el' AIRFLOW_CTX_EXECUTION_DATE='2024-05-25T00:20:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-25T00:20:00+00:00'
+[2024-05-26T01:06:05.790+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-26T01:06:05.799+0000] {logging_mixin.py:188} INFO - The connection to the DB was succesful
+[2024-05-26T01:06:05.814+0000] {logging_mixin.py:188} INFO - Query completed
+[2024-05-26T01:06:05.817+0000] {logging_mixin.py:188} INFO - execute_query_result_set()
+[2024-05-26T01:06:05.824+0000] {logging_mixin.py:188} INFO - The connection to the DB was succesful
+[2024-05-26T01:06:05.830+0000] {logging_mixin.py:188} INFO - Inserts were comitted
+[2024-05-26T01:06:05.831+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-05-26T01:06:05.831+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-26T01:06:05.840+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=DAG_catedra_***, task_id=first-step-el, run_id=scheduled__2024-05-25T00:20:00+00:00, execution_date=20240525T002000, start_date=20240526T010605, end_date=20240526T010605
+[2024-05-26T01:06:05.881+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-26T01:06:05.911+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-26T01:06:05.915+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-26T01:20:06.445+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-26T01:20:06.466+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: DAG_catedra_airflow.first-step-el scheduled__2024-05-25T00:20:00+00:00 [queued]>
+[2024-05-26T01:20:06.474+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: DAG_catedra_airflow.first-step-el scheduled__2024-05-25T00:20:00+00:00 [queued]>
+[2024-05-26T01:20:06.475+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-26T01:20:06.487+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): first-step-el> on 2024-05-25 00:20:00+00:00
+[2024-05-26T01:20:06.494+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=64) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-26T01:20:06.495+0000] {standard_task_runner.py:63} INFO - Started process 66 to run task
+[2024-05-26T01:20:06.496+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'DAG_catedra_***', 'first-step-el', 'scheduled__2024-05-25T00:20:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/dag_clase.py', '--cfg-path', '/tmp/tmpsb6979aq']
+[2024-05-26T01:20:06.497+0000] {standard_task_runner.py:91} INFO - Job 5: Subtask first-step-el
+[2024-05-26T01:20:06.536+0000] {task_command.py:426} INFO - Running <TaskInstance: DAG_catedra_airflow.first-step-el scheduled__2024-05-25T00:20:00+00:00 [running]> on host 47db2ca9c6bf
+[2024-05-26T01:20:06.610+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='DAG_catedra_***' AIRFLOW_CTX_TASK_ID='first-step-el' AIRFLOW_CTX_EXECUTION_DATE='2024-05-25T00:20:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-25T00:20:00+00:00'
+[2024-05-26T01:20:06.611+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-26T01:20:06.616+0000] {logging_mixin.py:188} INFO - The connection to the DB was succesful
+[2024-05-26T01:20:06.626+0000] {logging_mixin.py:188} INFO - Query completed
+[2024-05-26T01:20:06.629+0000] {logging_mixin.py:188} INFO - execute_query_result_set()
+[2024-05-26T01:20:06.634+0000] {logging_mixin.py:188} INFO - The connection to the DB was succesful
+[2024-05-26T01:20:06.639+0000] {logging_mixin.py:188} INFO - Inserts were comitted
+[2024-05-26T01:20:06.640+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-05-26T01:20:06.640+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-26T01:20:06.647+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=DAG_catedra_***, task_id=first-step-el, run_id=scheduled__2024-05-25T00:20:00+00:00, execution_date=20240525T002000, start_date=20240526T012006, end_date=20240526T012006
+[2024-05-26T01:20:06.669+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-26T01:20:06.688+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-26T01:20:06.701+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-26T01:48:28.755+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-26T01:48:28.774+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: DAG_catedra_airflow.first-step-el scheduled__2024-05-25T00:20:00+00:00 [queued]>
+[2024-05-26T01:48:28.781+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: DAG_catedra_airflow.first-step-el scheduled__2024-05-25T00:20:00+00:00 [queued]>
+[2024-05-26T01:48:28.782+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-26T01:48:28.795+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): first-step-el> on 2024-05-25 00:20:00+00:00
+[2024-05-26T01:48:28.801+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=65) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-26T01:48:28.803+0000] {standard_task_runner.py:63} INFO - Started process 67 to run task
+[2024-05-26T01:48:28.803+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'DAG_catedra_***', 'first-step-el', 'scheduled__2024-05-25T00:20:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/dag_clase.py', '--cfg-path', '/tmp/tmpm5qoynca']
+[2024-05-26T01:48:28.804+0000] {standard_task_runner.py:91} INFO - Job 5: Subtask first-step-el
+[2024-05-26T01:48:28.846+0000] {task_command.py:426} INFO - Running <TaskInstance: DAG_catedra_airflow.first-step-el scheduled__2024-05-25T00:20:00+00:00 [running]> on host 07ce07c9aa35
+[2024-05-26T01:48:28.926+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='DAG_catedra_***' AIRFLOW_CTX_TASK_ID='first-step-el' AIRFLOW_CTX_EXECUTION_DATE='2024-05-25T00:20:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-25T00:20:00+00:00'
+[2024-05-26T01:48:28.927+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-26T01:48:28.933+0000] {logging_mixin.py:188} INFO - The connection to the DB was succesful
+[2024-05-26T01:48:28.942+0000] {logging_mixin.py:188} INFO - Query completed
+[2024-05-26T01:48:28.945+0000] {logging_mixin.py:188} INFO - execute_query_result_set()
+[2024-05-26T01:48:28.950+0000] {logging_mixin.py:188} INFO - The connection to the DB was succesful
+[2024-05-26T01:48:28.958+0000] {logging_mixin.py:188} INFO - Inserts were comitted
+[2024-05-26T01:48:28.959+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-05-26T01:48:28.960+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-26T01:48:28.967+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=DAG_catedra_***, task_id=first-step-el, run_id=scheduled__2024-05-25T00:20:00+00:00, execution_date=20240525T002000, start_date=20240526T014828, end_date=20240526T014828
+[2024-05-26T01:48:29.017+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-26T01:48:29.059+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-05-26T01:48:29.066+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-26T01:49:56.848+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-26T01:49:56.867+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: DAG_catedra_airflow.first-step-el scheduled__2024-05-25T00:20:00+00:00 [queued]>
+[2024-05-26T01:49:56.874+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: DAG_catedra_airflow.first-step-el scheduled__2024-05-25T00:20:00+00:00 [queued]>
+[2024-05-26T01:49:56.875+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-26T01:49:56.887+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): first-step-el> on 2024-05-25 00:20:00+00:00
+[2024-05-26T01:49:56.892+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=117) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-26T01:49:56.893+0000] {standard_task_runner.py:63} INFO - Started process 119 to run task
+[2024-05-26T01:49:56.894+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'DAG_catedra_***', 'first-step-el', 'scheduled__2024-05-25T00:20:00+00:00', '--job-id', '15', '--raw', '--subdir', 'DAGS_FOLDER/dag_clase.py', '--cfg-path', '/tmp/tmp8cfhga33']
+[2024-05-26T01:49:56.895+0000] {standard_task_runner.py:91} INFO - Job 15: Subtask first-step-el
+[2024-05-26T01:49:56.931+0000] {task_command.py:426} INFO - Running <TaskInstance: DAG_catedra_airflow.first-step-el scheduled__2024-05-25T00:20:00+00:00 [running]> on host 07ce07c9aa35
+[2024-05-26T01:49:57.006+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='DAG_catedra_***' AIRFLOW_CTX_TASK_ID='first-step-el' AIRFLOW_CTX_EXECUTION_DATE='2024-05-25T00:20:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-25T00:20:00+00:00'
+[2024-05-26T01:49:57.007+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-26T01:49:57.013+0000] {logging_mixin.py:188} INFO - The connection to the DB was succesful
+[2024-05-26T01:49:57.022+0000] {logging_mixin.py:188} INFO - Query completed
+[2024-05-26T01:49:57.025+0000] {logging_mixin.py:188} INFO - execute_query_result_set()
+[2024-05-26T01:49:57.029+0000] {logging_mixin.py:188} INFO - The connection to the DB was succesful
+[2024-05-26T01:49:57.036+0000] {logging_mixin.py:188} INFO - Inserts were comitted
+[2024-05-26T01:49:57.036+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-05-26T01:49:57.038+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-26T01:49:57.046+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=DAG_catedra_***, task_id=first-step-el, run_id=scheduled__2024-05-25T00:20:00+00:00, execution_date=20240525T002000, start_date=20240526T014956, end_date=20240526T014957
+[2024-05-26T01:49:57.107+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-26T01:49:57.142+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-05-26T01:49:57.146+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-26T01:59:23.186+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-26T01:59:23.205+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: DAG_catedra_airflow.first-step-el scheduled__2024-05-25T00:20:00+00:00 [queued]>
+[2024-05-26T01:59:23.213+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: DAG_catedra_airflow.first-step-el scheduled__2024-05-25T00:20:00+00:00 [queued]>
+[2024-05-26T01:59:23.213+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-26T01:59:23.225+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): first-step-el> on 2024-05-25 00:20:00+00:00
+[2024-05-26T01:59:23.230+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=67) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-26T01:59:23.231+0000] {standard_task_runner.py:63} INFO - Started process 69 to run task
+[2024-05-26T01:59:23.231+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'DAG_catedra_***', 'first-step-el', 'scheduled__2024-05-25T00:20:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/dag_clase.py', '--cfg-path', '/tmp/tmpe2ps8nw3']
+[2024-05-26T01:59:23.233+0000] {standard_task_runner.py:91} INFO - Job 5: Subtask first-step-el
+[2024-05-26T01:59:23.271+0000] {task_command.py:426} INFO - Running <TaskInstance: DAG_catedra_airflow.first-step-el scheduled__2024-05-25T00:20:00+00:00 [running]> on host da1b21f42040
+[2024-05-26T01:59:23.344+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='DAG_catedra_***' AIRFLOW_CTX_TASK_ID='first-step-el' AIRFLOW_CTX_EXECUTION_DATE='2024-05-25T00:20:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-25T00:20:00+00:00'
+[2024-05-26T01:59:23.345+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-26T01:59:23.350+0000] {logging_mixin.py:188} INFO - The connection to the DB was succesful
+[2024-05-26T01:59:23.359+0000] {logging_mixin.py:188} INFO - Query completed
+[2024-05-26T01:59:23.361+0000] {logging_mixin.py:188} INFO - execute_query_result_set()
+[2024-05-26T01:59:23.366+0000] {logging_mixin.py:188} INFO - The connection to the DB was succesful
+[2024-05-26T01:59:23.371+0000] {logging_mixin.py:188} INFO - Inserts were comitted
+[2024-05-26T01:59:23.372+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-05-26T01:59:23.372+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-26T01:59:23.379+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=DAG_catedra_***, task_id=first-step-el, run_id=scheduled__2024-05-25T00:20:00+00:00, execution_date=20240525T002000, start_date=20240526T015923, end_date=20240526T015923
+[2024-05-26T01:59:23.405+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-26T01:59:23.427+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-05-26T01:59:23.432+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,75 @@
+[2024-05-25T21:18:44.768+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-25T21:18:44.804+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: DAG_catedra_airflow.second-step-el scheduled__2024-05-25T01:15:00+00:00 [queued]>
+[2024-05-25T21:18:44.819+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: DAG_catedra_airflow.second-step-el scheduled__2024-05-25T01:15:00+00:00 [queued]>
+[2024-05-25T21:18:44.820+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-25T21:18:44.838+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): second-step-el> on 2024-05-25 01:15:00+00:00
+[2024-05-25T21:18:44.846+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=656) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-25T21:18:44.849+0000] {standard_task_runner.py:63} INFO - Started process 658 to run task
+[2024-05-25T21:18:44.849+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'DAG_catedra_***', 'second-step-el', 'scheduled__2024-05-25T01:15:00+00:00', '--job-id', '163', '--raw', '--subdir', 'DAGS_FOLDER/dag_clase.py', '--cfg-path', '/tmp/tmpdtl4u3rs']
+[2024-05-25T21:18:44.851+0000] {standard_task_runner.py:91} INFO - Job 163: Subtask second-step-el
+[2024-05-25T21:18:44.915+0000] {task_command.py:426} INFO - Running <TaskInstance: DAG_catedra_airflow.second-step-el scheduled__2024-05-25T01:15:00+00:00 [running]> on host b2cfee8f0b2b
+[2024-05-25T21:18:45.057+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='DAG_catedra_***' AIRFLOW_CTX_TASK_ID='second-step-el' AIRFLOW_CTX_EXECUTION_DATE='2024-05-25T01:15:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-25T01:15:00+00:00'
+[2024-05-25T21:18:45.059+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-25T21:18:45.074+0000] {logging_mixin.py:188} INFO - Connection to database was succesful
+[2024-05-25T21:18:45.102+0000] {logging_mixin.py:188} INFO - Query completed
+[2024-05-25T21:18:45.164+0000] {logging_mixin.py:188} INFO - execute_query_result_set()
+[2024-05-25T21:18:45.175+0000] {logging_mixin.py:188} INFO - Connection to database was succesful
+[2024-05-25T21:18:45.308+0000] {logging_mixin.py:188} INFO - Inserts performed wihout fail
+[2024-05-25T21:18:45.310+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-05-25T21:18:45.310+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-25T21:18:45.322+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=DAG_catedra_***, task_id=second-step-el, run_id=scheduled__2024-05-25T01:15:00+00:00, execution_date=20240525T011500, start_date=20240525T211844, end_date=20240525T211845
+[2024-05-25T21:18:45.385+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-25T21:18:45.406+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-25T21:18:45.411+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-26T00:43:49.083+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-26T00:43:49.101+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: DAG_catedra_airflow.second-step-el scheduled__2024-05-25T01:15:00+00:00 [queued]>
+[2024-05-26T00:43:49.108+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: DAG_catedra_airflow.second-step-el scheduled__2024-05-25T01:15:00+00:00 [queued]>
+[2024-05-26T00:43:49.109+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-26T00:43:49.121+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): second-step-el> on 2024-05-25 01:15:00+00:00
+[2024-05-26T00:43:49.126+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=142) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-26T00:43:49.128+0000] {standard_task_runner.py:63} INFO - Started process 144 to run task
+[2024-05-26T00:43:49.128+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'DAG_catedra_***', 'second-step-el', 'scheduled__2024-05-25T01:15:00+00:00', '--job-id', '28', '--raw', '--subdir', 'DAGS_FOLDER/dag_clase.py', '--cfg-path', '/tmp/tmpkhns0crs']
+[2024-05-26T00:43:49.129+0000] {standard_task_runner.py:91} INFO - Job 28: Subtask second-step-el
+[2024-05-26T00:43:49.169+0000] {task_command.py:426} INFO - Running <TaskInstance: DAG_catedra_airflow.second-step-el scheduled__2024-05-25T01:15:00+00:00 [running]> on host bb8f67d70e6d
+[2024-05-26T00:43:49.242+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='DAG_catedra_***' AIRFLOW_CTX_TASK_ID='second-step-el' AIRFLOW_CTX_EXECUTION_DATE='2024-05-25T01:15:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-25T01:15:00+00:00'
+[2024-05-26T00:43:49.243+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-26T00:43:49.248+0000] {logging_mixin.py:188} INFO - Connection to database was succesful
+[2024-05-26T00:43:49.254+0000] {logging_mixin.py:188} INFO - query failed, df empty
+[2024-05-26T00:43:49.257+0000] {logging_mixin.py:188} INFO - execute_query_result_set()
+[2024-05-26T00:43:49.262+0000] {logging_mixin.py:188} INFO - Connection to database was succesful
+[2024-05-26T00:43:49.262+0000] {logging_mixin.py:188} INFO - Inserts performed wihout fail
+[2024-05-26T00:43:49.262+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-05-26T00:43:49.263+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-26T00:43:49.270+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=DAG_catedra_***, task_id=second-step-el, run_id=scheduled__2024-05-25T01:15:00+00:00, execution_date=20240525T011500, start_date=20240526T004349, end_date=20240526T004349
+[2024-05-26T00:43:49.302+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-26T00:43:49.319+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-26T00:43:49.325+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-05-26T02:00:21.149+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-26T02:00:21.183+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: DAG_catedra_airflow.second-step-el scheduled__2024-05-25T01:15:00+00:00 [queued]>
+[2024-05-26T02:00:21.194+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: DAG_catedra_airflow.second-step-el scheduled__2024-05-25T01:15:00+00:00 [queued]>
+[2024-05-26T02:00:21.195+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-26T02:00:21.216+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): second-step-el> on 2024-05-25 01:15:00+00:00
+[2024-05-26T02:00:21.226+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=142) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-05-26T02:00:21.228+0000] {standard_task_runner.py:63} INFO - Started process 144 to run task
+[2024-05-26T02:00:21.229+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'DAG_catedra_***', 'second-step-el', 'scheduled__2024-05-25T01:15:00+00:00', '--job-id', '28', '--raw', '--subdir', 'DAGS_FOLDER/dag_clase.py', '--cfg-path', '/tmp/tmptm2890hj']
+[2024-05-26T02:00:21.230+0000] {standard_task_runner.py:91} INFO - Job 28: Subtask second-step-el
+[2024-05-26T02:00:21.303+0000] {task_command.py:426} INFO - Running <TaskInstance: DAG_catedra_airflow.second-step-el scheduled__2024-05-25T01:15:00+00:00 [running]> on host da1b21f42040
+[2024-05-26T02:00:21.469+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='DAG_catedra_***' AIRFLOW_CTX_TASK_ID='second-step-el' AIRFLOW_CTX_EXECUTION_DATE='2024-05-25T01:15:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-25T01:15:00+00:00'
+[2024-05-26T02:00:21.471+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-26T02:00:21.480+0000] {logging_mixin.py:188} INFO - The connection to the DB was succesful
+[2024-05-26T02:00:21.498+0000] {logging_mixin.py:188} INFO - Query completed
+[2024-05-26T02:00:21.505+0000] {logging_mixin.py:188} INFO - execute_query_result_set()
+[2024-05-26T02:00:21.513+0000] {logging_mixin.py:188} INFO - The connection to the DB was succesful
+[2024-05-26T02:00:21.519+0000] {logging_mixin.py:188} INFO - Inserts were comitted
+[2024-05-26T02:00:21.520+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-05-26T02:00:21.521+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-26T02:00:21.532+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=DAG_catedra_***, task_id=second-step-el, run_id=scheduled__2024-05-25T01:15:00+00:00, execution_date=20240525T011500, start_date=20240526T020021, end_date=20240526T020021
+[2024-05-26T02:00:21.564+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-26T02:00:21.583+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-26T02:00:21.588+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
