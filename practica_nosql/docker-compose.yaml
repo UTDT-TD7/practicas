@@ -50,3 +50,13 @@ services:
       - 18888:8888
     environment:
       - JUPYTER_TOKEN=utdt
+
+volumes:
+  pgvector_volume:
+    external: false
+  redis_volume:
+    external: false
+  mongo_volume:
+    external: false
+  neo4j_volume:
+    external: false
