@@ -6,5 +6,7 @@ WORKDIR /opt/airflow
 RUN pip install "apache-airflow==2.9.1" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.9.1/constraints-3.9.txt"
 COPY requirements.txt /opt/airflow/ 
 RUN pip install -r /opt/airflow/requirements.txt
-RUN echo admin > /opt/airflow/standalone_admin_password.txt
-CMD airflow standalone
+
+RUN airflow db migrate && airflow users create --username airflow --firstname Peter --lastname Parker --role Admin --password airflow --email spiderman@superhero.org 
+
+CMD airflow webserver --port 8080 & airflow scheduler
