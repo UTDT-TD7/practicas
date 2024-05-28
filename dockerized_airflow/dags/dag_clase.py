@@ -10,9 +10,15 @@ from datetime import datetime
 from airflow.operators.python import PythonOperator
 import psycopg2
 import pandas as pd
+<<<<<<< HEAD
 #import plugins.Steps as step
 import random
 import fun.Steps as step
+=======
+import plugins.Steps as step
+import random
+
+>>>>>>> 34bb84efab17e4220460eb9d7223b11d49e25048
 
 #env_variables
 host_1='postgres_e';host_2='postgres_l';port='5432';database='postgres'
@@ -86,6 +92,21 @@ with DAG(dag_id="DAG_catedra_airflow",
     #DAG
     t1 >> t2
     
+<<<<<<< HEAD
+=======
+    # t2=PythonOperator(task_id="parallel-process-1",
+    #                   python_callable=step_paralelo_0,
+    #                   provide_context=True,
+    #                   op_kwargs={'access':access,
+    #                              'secret':secret,
+    #                              'bucket':bucket,
+    #                              'type_file':type_file,
+    #                              'pre_path':pre_path,
+    #                              'KEY_FILE_LOCATION':KEY_FILE_LOCATION,
+    #                              'SCOPES':SCOPES,
+    #                              'number':number_0
+    #                              })
+>>>>>>> 34bb84efab17e4220460eb9d7223b11d49e25048
     
  
     
