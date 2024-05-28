@@ -38,7 +38,6 @@ create table if not exists etl_dump(
     muestreo varchar (50)   
 );
 
-<<<<<<< HEAD
 create table if not exists etl_dump_2(
     sessionId int,
     itemInSession int,
@@ -50,30 +49,3 @@ create table if not exists etl_dump_2(
     ban varchar (50),
     muestreo varchar (50)   
 );
-
-
-
-
-
-
-
-
-
-=======
->>>>>>> 34bb84efab17e4220460eb9d7223b11d49e25048
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
