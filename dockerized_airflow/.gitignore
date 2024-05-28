@@ -1,3 +1,2 @@
 logs/
-plugins/__pycache__
-dags/__pycache__
+*/**/__pycache__
