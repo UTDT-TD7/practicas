@@ -1,2 +1,3 @@
 logs/
 plugins/__pycache__
+dags/__pycache__
