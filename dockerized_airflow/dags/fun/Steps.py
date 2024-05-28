@@ -3,7 +3,7 @@ from datetime import datetime
 import pandas as pd
 import psycopg2
 
-import functions
+from fun import functions
 
 
 def step_ingesta_carga_pura(
