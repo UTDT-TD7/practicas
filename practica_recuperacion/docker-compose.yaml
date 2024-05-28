@@ -61,7 +61,7 @@ services:
 
   debezium:
     image: debezium/connect:latest
-    restart: always
+    
     container_name: debezium
     hostname: debezium
     depends_on:
@@ -131,7 +131,7 @@ services:
 
   debezium-ui:
     image: debezium/debezium-ui:latest
-    restart: always
+    
     container_name: debezium-ui
     hostname: debezium-ui
     depends_on:
@@ -144,7 +144,7 @@ services:
 
   postgres:
     image: postgres:latest
-    restart: always
+    
     container_name: postgres
     hostname: postgres
     ports:

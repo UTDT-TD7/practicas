@@ -17,7 +17,7 @@ services:
     image: postgres
     ports:
       - 5432:5432
-    restart: always
+    
     volumes:
       - ./container_db_e/scripts:/docker-entrypoint-initdb.d
       - ./container_db_e/:/container_db_e/
@@ -31,7 +31,7 @@ services:
     image: postgres
     ports:
       - 5433:5432
-    restart: always
+    
     volumes:
       - ./container_db_l/scripts:/docker-entrypoint-initdb.d
       - ./container_db_l/:/container_db_l/
