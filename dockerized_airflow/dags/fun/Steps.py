@@ -53,4 +53,11 @@ def cuenta_y_decide(host, database, user, password, port, query, column_names_e)
     if n % 2 == 0:
         return "first-step-el"
     else:
-        return "second-step-el"
+        return "second-step-alternativo"
+    
+def prueba_conexion(host, database, user, password, port):
+    p=functions.connectionSQL(host, database, user, password, port)
+    
+    
+    
+    

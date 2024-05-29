@@ -4,6 +4,8 @@ ENV AIRFLOW_HOME=/opt/airflow
 ENV AIRFLOW_VERSION=2.9.1
 WORKDIR /opt/airflow 
 RUN pip install "apache-airflow==2.9.1" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.9.1/constraints-3.9.txt"
+RUN pip install apache-airflow-providers-postgres
+RUN pip install 'apache-airflow[postgres]'
 COPY requirements.txt /opt/airflow/ 
 RUN pip install -r /opt/airflow/requirements.txt
 

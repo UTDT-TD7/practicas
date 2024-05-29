@@ -103,7 +103,7 @@ default_args = {"depends_on_past": True}
 with DAG(
     dag_id="DAG_catedra_airflow",
     description="Clase pasada transformada en DAG",
-    start_date=datetime(2024, 5, 25, 00, 15),  ##3 hs adelantado!!!
+    start_date=datetime(2024, 5, 28, 00, 15),  ##3 hs adelantado!!!
     schedule_interval="*/5 * * * *",
     default_args=default_args,
     max_active_runs=1,
