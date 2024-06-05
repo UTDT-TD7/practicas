@@ -1,46 +1,33 @@
 import pandas as pd
-import pyarrow.parquet as pq
 import pyarrow as pa
-import boto3
-import numpy as np
-import s3fs
+import pyarrow.parquet as pq
 
-s3 = boto3.client('s3',
-                  endpoint_url='http://localhost:9000',
-                  aws_access_key_id='catedra',
-                  aws_secret_access_key='catedrapass')
-fs = s3fs.S3FileSystem(anon=False, endpoint_url="http://localhost:9000",
-                 key='catedra', secret='catedrapass', use_ssl=False)
+from dataset_utils import connect_s3_and_create_bucket, get_hourly_df, get_schema
 
-rbucket = 'randata'
-if rbucket not in [b["Name"] for b in s3.list_buckets()['Buckets']]:
-    s3.create_bucket(Bucket=rbucket)
+START_DATE = "05/28/2023"
+END_DATE = "06/05/2023"
 
-schema = pa.schema([
-    ("ts", pa.date32()),
-    ("cantidad", pa.int32()),
-    ("month", pa.int32()),
-    ("day", pa.int32()),
-    ("hour", pa.int32()),
-    ("valor", pa.float32()),
-    ("tipo", pa.string())
-])
+rbucket = "randata"
+s3, fs = connect_s3_and_create_bucket(
+    endpoint_url="http://localhost:9000",
+    aws_access_key_id="catedra",
+    aws_secret_access_key="catedrapass",
+    rbucket=rbucket,
+)
+
+schema = get_schema()
 
 df = pd.DataFrame()
-for data_date in pd.date_range(start='05/28/2023', end='06/05/2023'):
+for data_date in pd.date_range(start=START_DATE, end=END_DATE):
     for hour in range(24):
-        samples = np.random.randint(100,200)
-        h_df = pd.DataFrame({
-            "ts": data_date,
-            "day": data_date.day,
-            "month": data_date.month,
-            "hour": hour,
-            "cantidad": np.random.randint(0, 100, samples),
-            "valor": np.random.rand(samples),
-            "tipo": np.random.choice(["aaa", "bbb", "ccc", "ddd"], samples)
-        })
-        df = pd.concat([df,h_df])
+        h_df = get_hourly_df(data_date, hour)
+        df = pd.concat([df, h_df])
 
 parq = pa.Table.from_pandas(df, schema=schema)
-pq.write_to_dataset(parq, root_path=f's3://{rbucket}/', basename_template="{i}.parquet",
-                    partition_cols=['month', 'day'], filesystem=fs)
+pq.write_to_dataset(
+    parq,
+    root_path=f"s3://{rbucket}/",
+    basename_template="{i}.parquet",
+    partition_cols=["month", "day"],
+    filesystem=fs,
+)
