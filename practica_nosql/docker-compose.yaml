@@ -14,11 +14,11 @@ services:
 
   redis:
     container_name: redis
-    image: redis:latest
+    image: redis/redis-stack:latest
     restart: unless-stopped
     ports:
       - 6379:6379
-    command: redis-server
+    command: redis-server --requirepass redis --loadmodule /opt/redis-stack/lib/rejson.so
     volumes:
       - redis_volume:/data
 

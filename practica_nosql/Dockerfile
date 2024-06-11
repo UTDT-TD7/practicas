@@ -9,7 +9,8 @@ RUN pip install -U \
 	pgvector==0.2.5 \
 	openai==1.30.3 \
 	llama-index==0.10.39 \
-	tqdm==4.66.4
+	tqdm==4.66.4 \
+	wikipedia
 WORKDIR /notebooks
 EXPOSE 8888
 ENTRYPOINT ["jupyter"]
