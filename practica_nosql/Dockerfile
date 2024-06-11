@@ -6,7 +6,10 @@ RUN pip install -U \
 	pymongo==4.7.2 \
 	pandas==2.2.1 \
 	jupyterlab==4.1.5 \
-	vecs==0.4.3
+	pgvector==0.2.5 \
+	openai==1.30.3 \
+	llama-index==0.10.39 \
+	tqdm==4.66.4
 WORKDIR /notebooks
 EXPOSE 8888
 ENTRYPOINT ["jupyter"]
