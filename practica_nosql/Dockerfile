@@ -10,7 +10,8 @@ RUN pip install -U \
 	openai==1.30.3 \
 	llama-index==0.10.39 \
 	tqdm==4.66.4 \
-	wikipedia
+	wikipedia==1.4.0 \
+	sentence-transformers==3.0.1
 WORKDIR /notebooks
 EXPOSE 8888
 ENTRYPOINT ["jupyter"]
