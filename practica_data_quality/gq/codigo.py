@@ -1,10 +1,16 @@
 import great_expectations as gx
 from great_expectations.checkpoint import Checkpoint
 
+#El connection string linkea con nuestra BBDD. El context es el marco en el cual desarrollaremos el trabajo
+
 PG_CONNECTION_STRING = "postgresql+psycopg2://catedra:S3cret@postgres/catedra"
 
 context = gx.get_context(project_root_dir="/gq")
 
+
+#Intentamos agregar al contexto una fuente de datos (una BBDD en postgres donde previamente creamos
+#y populamos la tabla turnstiles. En caso de que corramos por 2da vez, simplemente accedemos a esta fuente
+#que ya fue creada antes
 
 try:
     pg_datasource = context.sources.add_postgres(
@@ -14,13 +20,21 @@ except gx.exceptions.exceptions.DataContextError:
     print("Datasource already exists, instantiating..")
     pg_datasource = context.datasources["pg_datasource"]
 
+#Misma lógica pero para agregar la tabla, si ya existe simplemente es pass
 try:
     pg_datasource.add_table_asset(name="turnstiles", table_name="turnstiles")
 except ValueError:
     # Already exists
     pass
 
+
+#Se agrega al context una suite y un validator. Qué es esto?
+#Una suite es un conjunto determinado de expectations que se ejerce sobre un conjunto específico de datos
+#Un validator es un objeto requerido para efectivamente ejecutar una expectation
+
 batch_request = pg_datasource.get_asset("turnstiles").build_batch_request()
+
+
 
 expectation_suite_name = "suite"
 context.add_or_update_expectation_suite(expectation_suite_name=expectation_suite_name)
@@ -30,10 +44,15 @@ validator = context.get_validator(
 )
 
 
+#Aca debieran escribir las expectations deseadas, estas se agregarán al suite al ser corridas por el validator
+#El punto uno estáde ejemplo, ayúdense con la docu
 ##########################
-# validator.expect_x(...)#
+#2
+validator.expect_column_values_to_be_of_type("pax_total", "INTEGER")
 ##########################
 
+#Un checkpoint es una abstracción resultante de validar una suite de expectations 
+#Le estamos pidiendo además que actualice data docs (html) y guarde el resultado de la validación
 checkpoint = Checkpoint(
     name="turnstiles_checkpoint",
     run_name_template="%Y%m%d-%H%M%S-my-run-name-template",
@@ -49,6 +68,7 @@ checkpoint = Checkpoint(
     ],
 )
 
+#En estas útimas líneas construimos el .html con los docs, el documento suite.json y corremos el checkpoint
 context.build_data_docs()
 context.add_or_update_checkpoint(checkpoint=checkpoint)
 validator.save_expectation_suite(discard_failed_expectations=False)
