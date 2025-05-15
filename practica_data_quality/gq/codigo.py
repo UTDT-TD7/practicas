@@ -17,8 +17,10 @@ try:
         name="pg_datasource", connection_string=PG_CONNECTION_STRING
     )
 except gx.exceptions.exceptions.DataContextError:
-    print("Datasource already exists, instantiating..")
-    pg_datasource = context.datasources["pg_datasource"]
+    del context.datasources["pg_datasource"]
+    pg_datasource = context.sources.add_postgres(
+        name="pg_datasource", connection_string=PG_CONNECTION_STRING
+    )
 
 #Misma lógica pero para agregar la tabla, si ya existe simplemente es pass
 try:
@@ -28,9 +30,8 @@ except ValueError:
     pass
 
 
-#Se agrega al context una suite y un validator. Qué es esto?
-#Una suite es un conjunto determinado de expectations que se ejerce sobre un conjunto específico de datos
-#Un validator es un objeto requerido para efectivamente ejecutar una expectation
+#Intentamos agregar al contexto una fuente de datos (una BBDD en postgres donde previamente creamos
+#y populamos la tabla turnstiles. En caso de que corramos por 2da vez, borramos la fuente y la volvemos a crear. Para que la tabla no quede "cacheada"
 
 batch_request = pg_datasource.get_asset("turnstiles").build_batch_request()
 
@@ -48,7 +49,8 @@ validator = context.get_validator(
 #El punto uno estáde ejemplo, ayúdense con la docu
 ##########################
 #2
-validator.expect_column_values_to_be_of_type("pax_total", "INTEGER")
+#4
+validator.expect_column_values_to_not_be_null("molinete")
 ##########################
 
 #Un checkpoint es una abstracción resultante de validar una suite de expectations 
