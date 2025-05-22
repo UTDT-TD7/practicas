@@ -74,11 +74,11 @@ column_names_2 = [
 extract_query_1 = (
     "SELECT * FROM listen_events OFFSET "
     + str(limit_1)
-    + " ROWS FETCH NEXT 10 ROWS ONLY"
+    + " ROWS FETCH NEXT "+str(limit_1)+" ROWS ONLY"
 )
 
 ##TO-DO hay que hacer algo con la lógica aca, un campo de id
-extract_query_2 = "SELECT * FROM listen_events ORDER BY fecha DESC LIMIT 10"
+extract_query_2 = "SELECT * FROM listen_events_2 ORDER BY fecha DESC LIMIT 10"
 
 # Insert query
 names = str(column_names_e).replace("[", "").replace("]", "").replace("'", "")
@@ -91,7 +91,7 @@ symbol = (
 )
 symbol = symbol[0 : len(symbol) - 1]
 insert_query = (
-    "INSERT INTO listen_events (" + names + ", fecha" + ") VALUES " + "(" + symbol + ")"
+    "INSERT INTO listen_events_2 (" + names + ", fecha" + ") VALUES " + "(" + symbol + ")"
 )
 
 # Para el etl
@@ -103,7 +103,7 @@ default_args = {"depends_on_past": True}
 with DAG(
     dag_id="DAG_catedra_airflow",
     description="Clase pasada transformada en DAG",
-    start_date=datetime(2024, 5, 28, 00, 15),  ##3 hs adelantado!!!
+    start_date=datetime(2025, 5, 21, 00, 15),  ##3 hs adelantado!!!
     schedule_interval="*/5 * * * *",
     default_args=default_args,
     max_active_runs=1,

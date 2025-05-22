@@ -1,4 +1,4 @@
-create table if not exists listen_events(
+create table if not exists listen_events_2(
     sessionId int,
     itemInSession int,
     userId int,
