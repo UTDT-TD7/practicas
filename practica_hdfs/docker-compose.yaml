@@ -10,6 +10,8 @@ services:
         - ./config
       environment:
           ENSURE_NAMENODE_DIR: "/tmp/hadoop-root/dfs/name"
+      volumes:
+        - ./input_data/:/shared_input/
    datanode:
       image: apache/hadoop:3
       command: ["hdfs", "datanode"]

@@ -1,5 +1,6 @@
-**.csv
-!/practica_1/csv/**.csv
-**.log
+.DS_Store
 
-!listen_events.csv
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
