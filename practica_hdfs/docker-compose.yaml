@@ -1,4 +1,3 @@
-version: "2"
 services:
    namenode:
       image: apache/hadoop:3
@@ -12,15 +11,18 @@ services:
           ENSURE_NAMENODE_DIR: "/tmp/hadoop-root/dfs/name"
       volumes:
         - ./input_data/:/shared_input/
+        - ./output_data:/shared_output/
    datanode:
       image: apache/hadoop:3
       command: ["hdfs", "datanode"]
       deploy:
         mode: replicated
         replicas: 3
-
       env_file:
         - ./config      
+      volumes:
+        - ./input_data/:/shared_input/
+        - ./output_data:/shared_output/
    resourcemanager:
       image: apache/hadoop:3
       hostname: resourcemanager
@@ -31,8 +33,13 @@ services:
         - ./config
       volumes:
         - ./test.sh:/opt/test.sh
+        - ./input_data/:/shared_input/
+        - ./output_data:/shared_output/
    nodemanager:
       image: apache/hadoop:3
       command: ["yarn", "nodemanager"]
       env_file:
         - ./config
+      volumes:
+        - ./input_data/:/shared_input/
+        - ./output_data:/shared_output/
