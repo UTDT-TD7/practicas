@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    environment:
+      - REDIS_HOSTS=local:redis:6379
+    ports:
+      - "8081:8081"
+    depends_on:
+      - redis
+
+  python:
+    image: python:3.9
+    volumes:
+      - ./app:/app
+    working_dir: /app
+    command: >
+      bash -c "pip install redis &&
+              echo 'Servidor Python listo. Puedes ejecutar los scripts con:' &&
+              echo 'python worker_sender.py' &&
+              echo 'python worker_consumer.py' &&
+              tail -f /dev/null"
+    depends_on:
+      - redis
+
+volumes:
+  redis_data: 
