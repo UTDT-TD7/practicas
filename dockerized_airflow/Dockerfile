@@ -1,3 +1,4 @@
+#Pongo un comentario aca para mostrarle a los alumnos de MAP
 FROM python:3.9-bookworm
 
 ENV AIRFLOW_HOME=/opt/airflow
