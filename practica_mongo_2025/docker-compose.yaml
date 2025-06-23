@@ -1,0 +1,21 @@
+services:
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo_volume:/app/data
+
+  jupyterlab:
+    build: .
+    volumes:
+      - ./notebooks:/notebooks
+    ports:
+      - 28888:8888
+    environment:
+      - JUPYTER_TOKEN=utdt
+
+volumes:
+  mongo_volume:
+    external: false
